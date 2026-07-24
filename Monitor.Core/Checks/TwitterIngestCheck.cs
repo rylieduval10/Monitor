@@ -21,7 +21,7 @@ public class TwitterIngestCheck : MonitorCheck
     {
         _http = http;
         _settings = settings;
-        Interval = TimeSpan.FromMinutes(Math.Max(1, settings.IntervalMinutes));
+        Interval = settings.Interval;
     }
 
     public override string Name => "Twitter ingest";
