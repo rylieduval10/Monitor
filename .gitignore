@@ -5,3 +5,6 @@ obj/
 *.user
 appsettings.local.json
 monitor-*.sh
+MonitorNBA/appsettings.local.json
+monitor-state.json
+**/monitor-state.json

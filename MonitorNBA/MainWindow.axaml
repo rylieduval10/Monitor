@@ -42,8 +42,9 @@
         <ItemsControl.ItemTemplate>
           <DataTemplate x:DataType="vm:CheckRowViewModel">
             <Border BorderBrush="#33000000" BorderThickness="1" CornerRadius="4"
-                    Padding="12" Margin="0,0,0,8">
-              <Grid ColumnDefinitions="8,16,2*,3*,Auto">
+                    Padding="12" Margin="0,0,0,8"
+                    Opacity="{Binding RowOpacity}">
+              <Grid ColumnDefinitions="8,16,2*,3*,Auto,Auto">
 
                 <Border Grid.Column="0" Width="8" CornerRadius="4"
                         Background="{Binding StatusBrush}" />
@@ -64,6 +65,12 @@
                   <TextBlock Text="{Binding IntervalText}" FontSize="12"
                              Opacity="0.6" HorizontalAlignment="Right" />
                 </StackPanel>
+
+                <Button Grid.Column="5"
+                        Content="{Binding PauseButtonText}"
+                        Command="{Binding TogglePauseCommand}"
+                        VerticalAlignment="Center"
+                        MinWidth="80" />
 
               </Grid>
             </Border>
